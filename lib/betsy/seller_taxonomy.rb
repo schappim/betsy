@@ -25,12 +25,12 @@ module Betsy
     # both nodes and node properties
     attribute :name
 
-    def self.get_seller_taxonomy_nodes
-      make_request(:get, "/v3/application/seller-taxonomy/nodes")
+    def self.get_seller_taxonomy_nodes(options = {})
+      make_request(:get, "/v3/application/seller-taxonomy/nodes", options)
     end
 
-    def self.get_properties_by_taxonomy_id(taxonomy_id)
-      make_request(:get, "/v3/application/seller-taxonomy/nodes/#{taxonomy_id}/properties")
+    def self.get_properties_by_taxonomy_id(taxonomy_id, options = {})
+      make_request(:get, "/v3/application/seller-taxonomy/nodes/#{taxonomy_id}/properties", options)
     end
   end
 end

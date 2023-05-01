@@ -8,8 +8,8 @@ module Betsy
     attribute :value_id
     attribute :image_id
 
-    def self.get_listing_variation_images(shop_id, listing_id)
-      make_request(:get, "/v3/application/shops/#{shop_id}/listings/#{listing_id}/variation-images")
+    def self.get_listing_variation_images(shop_id, listing_id, options = {})
+      make_request(:get, "/v3/application/shops/#{shop_id}/listings/#{listing_id}/variation-images", options)
     end
 
     def self.update_variation_images(shop_id, listing_id, options = {})

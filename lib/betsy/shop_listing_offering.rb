@@ -10,8 +10,8 @@ module Betsy
     attribute :is_deleted
     attribute :price
 
-    def self.get_listing_offering(listing_id, product_id, product_offering_id)
-      make_request(:get, "/v3/application/listings/#{listing_id}/products/#{product_id}/offerings/#{product_offering_id}")
+    def self.get_listing_offering(listing_id, product_id, product_offering_id, options = {})
+      make_request(:get, "/v3/application/listings/#{listing_id}/products/#{product_id}/offerings/#{product_offering_id}", options)
     end
   end
 end

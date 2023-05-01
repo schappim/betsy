@@ -27,12 +27,12 @@ module Betsy
       make_request(:delete, "/v3/application/shops/#{shop_id}/listings/#{listing_id}/images/#{listing_image_id}", options)
     end
 
-    def self.get_listing_image(shop_id, listing_id, listing_image_id)
-      make_request(:get, "/v3/application/shops/#{shop_id}/listings/#{listing_id}/images/#{listing_image_id}")
+    def self.get_listing_image(shop_id, listing_id, listing_image_id, options = {})
+      make_request(:get, "/v3/application/shops/#{shop_id}/listings/#{listing_id}/images/#{listing_image_id}", options)
     end
 
-    def self.get_listing_images(shop_id, listing_id)
-      make_request(:get, "/v3/application/shops/#{shop_id}/listings/#{listing_id}/images")
+    def self.get_listing_images(shop_id, listing_id, options = {})
+      make_request(:get, "/v3/application/shops/#{shop_id}/listings/#{listing_id}/images", options)
     end
 
     def self.upload_listing_image(shop_id, listing_id, options = {})

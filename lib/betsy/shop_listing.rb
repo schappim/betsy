@@ -105,8 +105,8 @@ module Betsy
     def self.get_listing_property
     end
 
-    def self.get_listing_properties(shop_id, listing_id)
-      make_request(:get, "/v3/application/shops/#{shop_id}/listings/#{listing_id}/properties")
+    def self.get_listing_properties(shop_id, listing_id, options = {})
+      make_request(:get, "/v3/application/shops/#{shop_id}/listings/#{listing_id}/properties", options)
     end
 
     def self.update_listing(shop_id, listing_id, options = {})

@@ -14,12 +14,12 @@ module Betsy
       make_request(:post, "/v3/application/shops/#{shop_id}/sections", options)
     end
 
-    def self.get_shop_sections(shop_id)
-      make_request(:get, "/v3/application/shops/#{shop_id}/sections")
+    def self.get_shop_sections(shop_id, options = {})
+      make_request(:get, "/v3/application/shops/#{shop_id}/sections", options)
     end
 
-    def self.get_shop_section(shop_id, shop_section_id)
-      make_request(:get, "/v3/application/shops/#{shop_id}/sections/#{shop_section_id}")
+    def self.get_shop_section(shop_id, shop_section_id, options = {})
+      make_request(:get, "/v3/application/shops/#{shop_id}/sections/#{shop_section_id}", options)
     end
   end
 end

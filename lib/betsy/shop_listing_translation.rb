@@ -14,8 +14,8 @@ module Betsy
       make_request(:post, "/v3/application/shops/#{shop_id}/listings/#{listing_id}/translations/#{language}", options)
     end
 
-    def self.get_listing_translation(shop_id, listing_id, language)
-      make_request(:get, "/v3/application/shops/#{shop_id}/listings/#{listing_id}/translations/#{language}")
+    def self.get_listing_translation(shop_id, listing_id, language, options = {})
+      make_request(:get, "/v3/application/shops/#{shop_id}/listings/#{listing_id}/translations/#{language}", options)
     end
 
     def self.update_listing_translation(shop_id, listing_id, language, options = {})
