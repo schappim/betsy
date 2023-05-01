@@ -49,16 +49,16 @@ module Betsy
     attribute :review_count
     attribute :review_average
 
-    def self.get_shop(shop_id)
-      make_request(:get, "/v3/application/shops/#{shop_id}")
+    def self.get_shop(shop_id, options = {})
+      make_request(:get, "/v3/application/shops/#{shop_id}", options = {})
     end
 
     def self.update_shop(shop_id, options = {})
       make_request(:put, "/v3/application/shops/#{shop_id}", options)
     end
 
-    def self.get_shop_by_owner_user_id(user_id)
-      make_request(:get, "/v3/application/users/#{user_id}/shops")
+    def self.get_shop_by_owner_user_id(user_id, options = {})
+      make_request(:get, "/v3/application/users/#{user_id}/shops", options)
     end
 
     def self.find_shops(shop_name, options = {})
