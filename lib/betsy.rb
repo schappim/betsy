@@ -100,6 +100,9 @@ module Betsy
       etsy_account.expires_in = response["expires_in"]
       etsy_account.last_token_refresh = DateTime.now
       etsy_account.save
+
+      redirect_to = etsy_account.etsy_store_id.present? ? "/admin/etsy_store/#{etsy_account.etsy_store_id}" : "/"
+
     else
       raise "The state provided to /etsy_response_listener was an invalid state, this could be a sign of a CSRF attack"
     end
