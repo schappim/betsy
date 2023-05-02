@@ -12,6 +12,7 @@ module Betsy
       def make_request(request_type, endpoint, options = {})
         check_token_expiration(options[:etsy_account]) if options[:etsy_account]
         headers = access_credentials(options[:etsy_account])
+        headers['Content-Type'] = options.delete(:content_type) if options[:content_type]
         options.delete(:etsy_account)
         response = Faraday.method(request_type).call("#{BASE_ETSY_API_URL}#{endpoint}", options, headers)
         handle_response(response)
